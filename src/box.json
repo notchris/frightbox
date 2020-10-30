@@ -1,0 +1,14 @@
+{ "columns":6,
+ "image":"boxes-sheet.png",
+ "imageheight":32,
+ "imagewidth":96,
+ "margin":0,
+ "name":"box",
+ "spacing":0,
+ "tilecount":12,
+ "tiledversion":"1.4.2",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":1.4
+}

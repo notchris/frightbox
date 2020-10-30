@@ -5,8 +5,8 @@ import SceneA from './scenes/SceneA'
 import Menu from './scenes/Menu'
 
 const config = {
-    width: 480,
-    height: 640,
+    width: 608,
+    height: 704,
     type: Phaser.WEBGL,
     pixelArt: true,
     parent: 'render',

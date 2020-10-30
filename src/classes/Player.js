@@ -16,9 +16,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.x = x;
         this.y = y;
 
-        this.body.width = 14;
-        this.body.height = 12;
-        this.body.offset.x = 1;
+        this.body.width = 10;
+        this.body.height = 10;
+        this.body.offset.x = 3;
         this.body.offset.y = 14;
 
         /** Custom properties */
