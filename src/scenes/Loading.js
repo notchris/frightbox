@@ -17,6 +17,8 @@ export default class Loading extends Phaser.Scene {
     this.load.tilemapTiledJSON("map", "./src/mapA.json");
     this.load.image("box", "./src/assets/img/boxes-sheet.png");
 
+    // Menu
+    this.load.image('title', 'src/assets/img/frightbox-sign-large.png');
 
     }
 
