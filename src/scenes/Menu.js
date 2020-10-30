@@ -10,18 +10,27 @@ export default class Menu extends Phaser.Scene {
     }
 
     create () {
-        // Title Text
-        const title = this.add.text(240, 60, 'FRIGHT BOX', { fontFamily: 'Arial', fontSize: 64, color: '#00ff00', align: 'center' });
-        title.setOrigin(0.5)
+
+        //const banner = this.add.image('sign', 0, 0)
+        const midX = this.game.config.width / 2;
+        const midY = this.game.config.height / 2;
+
+        let titleImg = this.add.image(midX, midY - 100, 'title');
+        titleImg.setScale(4, 4)
+        const itemStart = this.add.text(midX, midY + 60, 'New Game', { fontFamily: 'Arial', fontSize: 40, color: '#ffffff', align: 'center' });
+
+        let credits = this.add.text(midX, midY + 120, 'A game by Richard, Kaley & Chris!', { fontFamily: 'Arial', fontSize: 20, color: '#ffffff', align: 'center' });
+        credits.setOrigin(0.5)
+
 
         // Menu Items
-        const itemStart = this.add.text(240, 180, 'New Game', { fontFamily: 'Arial', fontSize: 48, color: '#ffffff', align: 'center' });
         itemStart.setOrigin(0.5)
         itemStart.setInteractive({
             useHandCursor: true
         }).on('pointerdown', (pointer, localX, localY, event) => {
             this.scene.start('SceneA')
         });
+
 
     }
 

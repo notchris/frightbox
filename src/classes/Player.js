@@ -16,10 +16,13 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.x = x;
         this.y = y;
 
+        this.body.setCircle(5);
         this.body.width = 10;
         this.body.height = 10;
         this.body.offset.x = 3;
         this.body.offset.y = 14;
+
+        this.setDepth(5)
 
         /** Custom properties */
         this.speed = 80;
@@ -29,12 +32,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.dead = false;
 
         /** Player Use Sensor */
-        this.sensor = this.scene.physics.add.sprite(this.x, this.y + 2, '', 0);
-        this.sensor.visible = true;
-        this.sensor.displayHeight = 8;
-        this.sensor.displayWidth = 8;
-        this.sensor.body.width = 8;
-        this.sensor.body.height = 8;
 
       /** Sprite Animations */
       const frames = this.scene.anims.generateFrameNumbers('player', {});
@@ -100,24 +97,28 @@ export default class Player extends Phaser.GameObjects.Sprite {
     /** Movement */
 
     moveUp() {
+      if (this.dead) return
       this.body.setVelocityY(-this.speed);
       this.anims.play('walkUp', true);
       this.direction = 'up';
     }
 
     moveDown() {
+      if (this.dead) return
       this.body.setVelocityY(this.speed);
       this.anims.play('walkDown', true);
       this.direction = 'down';
     }
 
     moveLeft() {
+      if (this.dead) return
       this.body.setVelocityX(-this.speed);
       this.anims.play('walkLeft', true);
       this.direction = 'left';
     }
 
     moveRight() {
+      if (this.dead) return
       this.body.setVelocityX(this.speed);
       this.anims.play('walkRight', true);
       this.direction = 'right';
